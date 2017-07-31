@@ -104,4 +104,7 @@ is_it_today()
 
 articles = nytimes(user_birthday)
 
-parse_nyt_data(articles)
+if len(articles['response']['docs']) == 0:
+    print("\n", "No articles found for your birthdate... I guess you were all news that we needed! :-)", "\n", sep="")
+else:
+    parse_nyt_data(articles)
