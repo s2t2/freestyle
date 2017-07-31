@@ -5,7 +5,17 @@ import os
 import textwrap
 import datetime
 
+def introduction():
+    intro = """
+    -------------
+    Birthday News
+    -------------
 
+    This app will tell you a few things about the world on the day that you were born.
+    Articles from the New York Times will be displayed for your birthday.
+
+    """
+    print(intro)
 
 
 
