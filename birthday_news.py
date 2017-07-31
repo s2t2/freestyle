@@ -47,6 +47,21 @@ def is_it_today():
 ##     ##  ##  ##    ##     ##    ##     ## ##     ## ##     ##    ##    ####
 ########  #### ##     ##    ##    ##     ## ########  ##     ##    ##    #### """)
 
+#create request to the NYTimes
+
+def nytimes(birthday):
+    data_request = {}
+    data_request['api-key'] = os.environ["NYU_INFO_2335"]
+    data_request['begin_date'] = birthday
+    data_request['end_date'] = birthday
+
+    url_values = urllib.parse.urlencode(data_request)
+    basic_url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json'
+    full_url = basic_url + '?' + url_values
+    r = requests.get(full_url)
+    nyt_data = r.json()
+    #print(r.status_code)
+    return nyt_data
 
 
 
