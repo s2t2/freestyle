@@ -7,6 +7,6 @@
 3. Create an environment variable named "$NYU_INFO_2335" to locally store your API key.
 
 # Run the application
-1. Navigate to the file in which you saved the file.
+1. Navigate to the directory in which you saved the file; then navigate to the 'app' directory within that folder.
 2. To run the program, issue the following command: python3 ./birthday_news.py
 3. Note: you must use Python 3 to run this program. 
