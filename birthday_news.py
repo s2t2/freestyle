@@ -17,6 +17,12 @@ def introduction():
     """
     print(intro)
 
+#get birth date from user
+
+def get_bday():
+    your_bday = input("Ok, so no judgments... when is your birthday? (YYYYMMDD): ")
+    return your_bday
+
 
 
 
