@@ -63,16 +63,34 @@ def nytimes(birthday):
     #print(r.status_code)
     return nyt_data
 
+#parse nyt_data
 
+def parse_nyt_data(to_parse):
 
+    print("\n", "We found ", len(to_parse['response']['docs']), " articles from the day that you were born!", "\n", sep="")
 
+    i = 0
+    while True:
+        if to_parse['response']['docs'][i]['headline']['main'] == None:
+            print("Article title not available.")
+        else:
+            print("\n")
+            print("**", textwrap.fill(to_parse['response']['docs'][i]['headline']['main']), "**", "\n")
+        if to_parse['response']['docs'][i]['snippet'] == None:
+            print("Bummer... the article preview is not avaiable. Try the URL below.", "\n")
+        else:
+            print(textwrap.fill(to_parse['response']['docs'][i]['snippet']), "\n")
+        print("Read the entire article: ")
+        print(to_parse['response']['docs'][i]['web_url'], "\n", "\n")
 
+        if i == (len(to_parse['response']['docs'])-1):
+            break
 
-
-
-
-
-
+        x = input("Press ENTER to see next article or 'done' to exit: ")
+        if x.lower() == 'done':
+            print("\n", "OK, Bye!", "\n")
+            break
+        i += 1
 
 #-----------
 #run the app
