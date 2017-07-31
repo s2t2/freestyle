@@ -5,6 +5,8 @@ import os
 import textwrap
 import datetime
 
+#print introduction
+
 def introduction():
     intro = """
     -------------
@@ -22,6 +24,30 @@ def introduction():
 def get_bday():
     your_bday = input("Ok, so no judgments... when is your birthday? (YYYYMMDD): ")
     return your_bday
+
+#check if today is the user's birthday
+
+def is_it_today():
+    today = datetime.datetime.today()
+    if user_birthday[4:] == '{0:%m%d}'.format(today):
+        print("""
+##     ##    ###    ########  ########  ##    ##
+##     ##   ## ##   ##     ## ##     ##  ##  ##
+##     ##  ##   ##  ##     ## ##     ##   ####
+######### ##     ## ########  ########     ##
+##     ## ######### ##        ##           ##
+##     ## ##     ## ##        ##           ##
+##     ## ##     ## ##        ##           ##
+
+########  #### ########  ######## ##     ## ########     ###    ##    ## ####
+##     ##  ##  ##     ##    ##    ##     ## ##     ##   ## ##    ##  ##  ####
+##     ##  ##  ##     ##    ##    ##     ## ##     ##  ##   ##    ####   ####
+########   ##  ########     ##    ######### ##     ## ##     ##    ##     ##
+##     ##  ##  ##   ##      ##    ##     ## ##     ## #########    ##
+##     ##  ##  ##    ##     ##    ##     ## ##     ## ##     ##    ##    ####
+########  #### ##     ##    ##    ##     ## ########  ##     ##    ##    #### """)
+
+
 
 
 
